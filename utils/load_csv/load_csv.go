@@ -26,13 +26,13 @@ func Count_csv_lines_and_fields(filename string) (error, int, int) {
 
     reader := csv.NewReader(csvfile)
     for {
-		record, err := reader.Read()
-		// end-of-file is fitted into err
-		if err == io.EOF {
-			break
-		} else if err != nil {
-			return err, -1, -1
-		}
+        record, err := reader.Read()
+        // end-of-file is fitted into err
+        if err == io.EOF {
+            break
+        } else if err != nil {
+            return err, -1, -1
+        }
 
         if 0 == len(record) {
             continue
@@ -45,7 +45,7 @@ func Count_csv_lines_and_fields(filename string) (error, int, int) {
         }
 
         // column mismatch is part of csv read thing
-	}
+    }
 
     return nil, nbr_of_rows, nbr_of_cols
 }
@@ -70,13 +70,13 @@ func Readcsv_float64(filename string) (error, int, int, [][]float64) {
     reader := csv.NewReader(csvfile)
     atrow := 0
     for {
-		record, err := reader.Read()
-		// end-of-file is fitted into err
-		if err == io.EOF {
-			break
-		} else if err != nil {
-			return err, -1, -1, nil
-		}
+        record, err := reader.Read()
+        // end-of-file is fitted into err
+        if err == io.EOF {
+            break
+        } else if err != nil {
+            return err, -1, -1, nil
+        }
 
         if 0 == len(record) {
             continue
@@ -93,7 +93,7 @@ func Readcsv_float64(filename string) (error, int, int, [][]float64) {
 
         csv_array[atrow] = row
         atrow += 1
-	}
+    }
 
     return nil, nbr_of_rows, nbr_of_cols, csv_array
 }
