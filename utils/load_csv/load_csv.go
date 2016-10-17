@@ -52,7 +52,7 @@ func Count_csv_lines_and_fields(filename string) (error, int, int) {
 
 
 func Readcsv_float64(filename string) (error, int, int, [][]float64) {
-    err, nbr_of_rows, nbr_of_cols := Count_csv_lines_and_fields("kuk.csv")
+    err, nbr_of_rows, nbr_of_cols := Count_csv_lines_and_fields(filename)
     if nil != err {
         return err, -1, -1, nil
     }
